@@ -106,3 +106,40 @@ button:hover {
 .logo-container::after {
     bottom: -10px; /* Línea inferior */
 }
+
+.categoria {
+    margin-bottom: 30px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.categoria h3 {
+    font-size: 20px;
+    font-weight: normal;
+    color: #4a3f35;
+    margin-bottom: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.producto img {
+    max-width: 150px;
+    opacity: 0.9;
+}
+
+.producto p {
+    font-size: 16px;
+    color: #4a3f35;
+}
