@@ -192,9 +192,3 @@ body::before {
     height: 100%;
     background-color: rgba(245, 231, 219, 0.6); /* Beige con transparencia */
 }
-
-body {
-    background: linear-gradient(rgba(245, 231, 219, 0.5), rgba(181, 142, 114, 0.5)), url('images/fondo.jpg');
-    background-size: cover;
-    background-position: center;
-}
