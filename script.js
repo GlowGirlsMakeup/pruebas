@@ -42,3 +42,23 @@ window.onload = function() {
         lista.appendChild(nuevoComentario);
     });
 };
+
+document.querySelectorAll(".estrella").forEach((estrella) => {
+    estrella.addEventListener("click", function () {
+        let valor = this.getAttribute("data-valor");
+        document.querySelectorAll(".estrella").forEach(e => e.classList.remove("activa"));
+        for (let i = 0; i < valor; i++) {
+            document.querySelectorAll(".estrella")[i].classList.add("activa");
+        }
+    });
+});
+
+function guardarValoracion() {
+    let comentario = document.getElementById("comentario").value;
+    let estrellasSeleccionadas = document.querySelectorAll(".estrella.activa").length;
+    if (estrellasSeleccionadas > 0 && comentario.trim() !== "") {
+        alert(`Gracias por tu valoración de ${estrellasSeleccionadas} estrellas. Tu comentario: "${comentario}"`);
+    } else {
+        alert("Por favor, deja una valoración y un comentario antes de enviar.");
+    }
+}
