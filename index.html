@@ -7,49 +7,55 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
+
+<!-- Portada con video de fondo -->
 <section id="portada">
-    <h1 class="titulo">💄 Bienvenido a GlowGirls Makeup 💄</h1>
-    <button id="botonAccion">Comenzar</button>
+    <video autoplay loop muted id="videoFondo">
+        <source src="videos/glowgirls.mp4" type="video/mp4">
+    </video>
+    <div class="contenido-portada">
+        <h1 class="titulo">✨ Bienvenido a GlowGirls Makeup ✨</h1>
+        <button id="botonAccion">Explorar Productos</button>
+    </div>
 </section>
 
-  <div class="busqueda-container">
+<!-- Barra de búsqueda con filtro -->
+<div class="busqueda-container">
     <input type="text" id="busqueda" placeholder="🔍 Buscar productos..." />
+    <select id="filtro">
+        <option value="todo">Todos</option>
+        <option value="labiales">Labiales</option>
+        <option value="bases">Bases</option>
+        <option value="accesorios">Accesorios</option>
+    </select>
 </div>
 
-  <header>
+<!-- Header mejorado con navegación -->
+<header>
     <div class="logo-container">
-        <img src="images/Logo.png" alt="Logo Belleza Natural" />
+        <img src="images/Logo.png" alt="Logo GlowGirls Makeup" />
     </div>
     <h1>💅 GlowGirls Makeup 💅</h1>
     <nav>
-  </header>
+        <ul>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#comentarios">Opiniones</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
 
-
+<!-- Sección de productos -->
 <section id="productos" class="productos">
     <h2>Nuestros Productos</h2>
 
     <div class="categoria">
         <h3>Labiales</h3>
         <div class="grid">
-            <div class="producto">
+            <div class="producto labiales">
                 <img src="images/Labial.png" alt="Labial Rojo" />
                 <p>Labial Rojo - $4.500</p>
-                <a href="https://wa.me/5491130126909?text=Hola,%20quiero%20mas%20informacion%20de%20......" target="_blank">
-                    <button>Hablar por WhatsApp</button>
-                </a>
-            </div>
-                <div class="producto">
-                <img src="images/Corrector.png" alt="Corrector" />
-                <p>Corrector - $6.500</p>
-                <a href="https://wa.me/5491130126909?text=Hola,%20quiero%20mas%20informacion%20de%20......" target="_blank">
-                    <button>Hablar por WhatsApp</button>
-                </a>
-            </div>
-                <div class="producto">
-                <img src="images/Iluminador.png" alt="Iluminador" />
-                <p>Iluminador - $3.500</p>
-                <a href="https://wa.me/5491130126909?text=Hola,%20quiero%20mas%20informacion%20de%20......" target="_blank">
+                <a href="https://wa.me/5491130126909?text=Hola,%20quiero%20mas%20informacion%20de%20Labial Rojo" target="_blank">
                     <button>Hablar por WhatsApp</button>
                 </a>
             </div>
@@ -59,10 +65,10 @@
     <div class="categoria">
         <h3>Bases</h3>
         <div class="grid">
-            <div class="producto">
+            <div class="producto bases">
                 <img src="images/Base.png" alt="Base Líquida" />
                 <p>Base Líquida - $7.500</p>
-                <a href="https://wa.me/5491130126909?text=Hola,%20quiero%20mas%20informacion%20de%20......" target="_blank">
+                <a href="https://wa.me/5491130126909?text=Hola,%20quiero%20mas%20informacion%20de%20Base Líquida" target="_blank">
                     <button>Hablar por WhatsApp</button>
                 </a>
             </div>
@@ -72,18 +78,10 @@
     <div class="categoria">
         <h3>Accesorios</h3>
         <div class="grid">
-            <div class="producto">
+            <div class="producto accesorios">
                 <img src="images/Arqueador.png" alt="Arqueador" />
                 <p>Arqueador - $6.000</p>
-                <a href="https://wa.me/5491130126909?text=Hola,%20quiero%20mas%20informacion%20de%20......" target="_blank">
-                    <button>Hablar por WhatsApp</button>
-                </a>
-            </div>
-
-            <div class="producto">
-                <img src="images/Perfilador.png" alt="Perfilador" />
-                <p>Perfilador - $8.000</p>
-                <a href="https://wa.me/5491130126909?text=Hola,%20quiero%20mas%20informacion%20de%20......" target="_blank">
+                <a href="https://wa.me/5491130126909?text=Hola,%20quiero%20mas%20informacion%20de%20Arqueador" target="_blank">
                     <button>Hablar por WhatsApp</button>
                 </a>
             </div>
@@ -91,15 +89,7 @@
     </div>
 </section>
 
-  <footer>
-    <p>&copy; 2025 Belleza Natural</p>
-  </footer>
-
-  <section id="contacto" class="contacto">
-    <h2>Contacto</h2>
-    <p>📧 Correo: <a href="GlowGirls.Makeup@gmail.com">GlowGirls.Makeup@gmail.com</a></p>
-    <p>📞 Instagram: <a href="IG: GlowGirls_MakeUp">@GlowGirls_MakeUp</a></p>
-
+<!-- Sección de comentarios -->
 <section id="comentarios">
     <h2>💬 Opiniones de Clientes</h2>
     <div id="lista-comentarios"></div>
@@ -107,6 +97,19 @@
     <button onclick="agregarComentario()">Publicar</button>
 </section>
 
-  <script src="script.js"></script>
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 GlowGirls Makeup</p>
+</footer>
+
+<!-- Contacto -->
+<section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <p>📧 Correo: <a href="mailto:GlowGirls.Makeup@gmail.com">GlowGirls.Makeup@gmail.com</a></p>
+    <p>📞 Instagram: <a href="https://www.instagram.com/GlowGirls_MakeUp" target="_blank">@GlowGirls_MakeUp</a></p>
+</section>
+
+<!-- Script -->
+<script src="script.js"></script>
 </body>
 </html>
