@@ -58,5 +58,3 @@ document.getElementById("botonAccion").addEventListener("click", function() {
 document.getElementById("botonAccion").addEventListener("click", function() {
     document.getElementById("portada").style.display = "none"; 
 });
-
-
