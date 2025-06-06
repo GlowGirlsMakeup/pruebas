@@ -265,3 +265,59 @@ h1 {
     position: relative;
     top: 15px; /* Mueve hacia abajo */
 }
+
+#portada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #f7eddc, #b58e72);
+    text-align: center;
+}
+
+.titulo {
+    font-size: 2.5rem;
+    opacity: 0;
+    animation: aparecer 1.5s ease-in-out forwards;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#botonAccion {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #b58e72;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    animation: botonAnimado 2s ease-in-out forwards;
+}
+
+@keyframes botonAnimado {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#botonAccion:hover {
+    transform: scale(1.1);
+    background-color: #8f6b54;
+}

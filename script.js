@@ -50,4 +50,9 @@ document.getElementById("busqueda").addEventListener("input", function() {
     });
 });
 
+document.getElementById("botonAccion").addEventListener("click", function() {
+    this.innerText = "¡Vamos!";
+    this.style.backgroundColor = "#8f6b54";
+});
+
 
