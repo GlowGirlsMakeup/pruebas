@@ -258,10 +258,10 @@ h1 {
 }
 
 #busqueda {
-    margin-top: 20px; /* Aumenta el espacio arriba */
+    margin-top: 15px; /* Aumenta el espacio arriba */
 }
 
 #busqueda {
     position: relative;
-    top: 20px; /* Mueve hacia abajo */
+    top: 15px; /* Mueve hacia abajo */
 }
