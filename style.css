@@ -287,15 +287,15 @@ footer {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
-    justify-content: center;
-    align-items: center;
+    justify-content: right;
+    align-items: right;
 }
 
 .modal-contenido {
     background: #f7eddc;
     padding: 20px;
     width: 40%;
-    text-align: center;
+    text-align: right;
     border-radius: 8px;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
 }
@@ -344,7 +344,7 @@ button:hover {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
-    justify-content: center;
-    align-items: center;
+    justify-content: right;
+    align-items: right;
 }
 
