@@ -55,4 +55,8 @@ document.getElementById("botonAccion").addEventListener("click", function() {
     this.style.backgroundColor = "#8f6b54";
 });
 
+document.getElementById("botonAccion").addEventListener("click", function() {
+    document.getElementById("portada").style.display = "none"; 
+});
+
 
