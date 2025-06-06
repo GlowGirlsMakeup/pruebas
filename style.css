@@ -231,3 +231,19 @@ footer {
     color: white;
     font-size: 14px;
 }
+
+#pagarCarrito {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#pagarCarrito:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}

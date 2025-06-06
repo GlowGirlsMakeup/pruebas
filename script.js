@@ -127,3 +127,35 @@ document.querySelectorAll(".producto button").forEach((boton) => {
         });
     }
 });
+
+document.getElementById("pagarCarrito").addEventListener("click", function () {
+    let total = document.getElementById("totalCarrito").textContent;
+    
+    fetch("https://api.mercadopago.com/checkout/preferences", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer TU_ACCESS_TOKEN_AQUÍ"
+        },
+        body: JSON.stringify({
+            items: carrito.map(item => ({
+                title: item.nombre,
+                unit_price: item.precio,
+                quantity: item.cantidad,
+                currency_id: "ARS"
+            })),
+            back_urls: {
+                success: "https://tuweb.com/gracias",
+                failure: "https://tuweb.com/error",
+                pending: "https://tuweb.com/pending"
+            },
+            auto_return: "approved"
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        window.location.href = data.init_point;
+    })
+    .catch(error => console.error("Error al iniciar pago:", error));
+});
+
