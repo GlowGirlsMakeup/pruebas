@@ -6,30 +6,6 @@
   <title>Tienda de Maquillaje</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<header>
-    <div class="logo-container">
-        <img src="images/Logo.png" alt="Logo GlowGirls Makeup" />
-    </div>
-    <h1>💅 GlowGirls Makeup 💅</h1>
-    <nav>
-        <ul>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#comentarios">Opiniones</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-            <li><button id="verCarrito">🛒 Carrito (<span id="contadorCarrito">0</span>)</button></li>
-        </ul>
-    </nav>
-</header>
-
-<section id="carrito" class="modal">
-    <div class="modal-contenido">
-        <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
-        <h2>🛍️ Carrito de Compras</h2>
-        <div id="listaCarrito"></div>
-        <p>Total: $<span id="totalCarrito">0</span></p>
-        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
-    </div>
-</section>
 <body>
 
 <!-- Portada con video de fondo -->
@@ -68,6 +44,17 @@
         </ul>
     </nav>
 </header>
+
+<!-- Header mejorado con Carrito -->
+<div class="producto">
+    <img src="images/Labial.png" alt="Labial Rojo" />
+    <p>Labial Rojo - $4.500</p>
+    <button onclick="agregarAlCarrito('Labial Rojo', 4500)">Añadir al Carrito</button>
+    <a href="https://wa.me/5491130126909?text=Hola,%20quiero%20más%20información%20sobre%20Labial%20Rojo" target="_blank">
+        <button>Hablar por WhatsApp</button>
+    </a>
+</div>
+
 
 <!-- Sección de productos -->
 <section id="productos" class="productos">
