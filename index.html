@@ -1,78 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tienda de Maquillaje</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowGirls Makeup</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Portada con video de fondo -->
-<section id="portada">
-    <video autoplay loop muted id="videoFondo">
-        <source src="videos/glowgirls.mp4" type="video/mp4">
-    </video>
-    <div class="contenido-portada">
-        <h1 class="titulo">💄 Bienvenido a GlowGirls Makeup 💄</h1>
-        <button id="botonAccion">Explorar Productos</button>
-    </div>
-</section>
+    <!-- 🏠 Portada con video de fondo -->
+    <section id="portada">
+        <video autoplay loop muted id="videoFondo">
+            <source src="videos/glowgirls.mp4" type="video/mp4">
+        </video>
+        <div class="contenido-portada">
+            <h1 class="titulo">💄 Bienvenido a GlowGirls Makeup 💄</h1>
+            <button id="botonAccion">Explorar Productos</button>
+        </div>
+    </section>
 
-<!-- Barra de búsqueda con filtro -->
-<div class="busqueda-container">
-    <input type="text" id="busqueda" placeholder="🔍 Buscar productos..." />
-    <select id="filtro">
-        <option value="todo">Todos</option>
-        <option value="labiales">Labiales</option>
-        <option value="bases">Bases</option>
-        <option value="accesorios">Accesorios</option>
-    </select>
-</div>
-
-<!-- Modal del carrito -->
-<section id="carrito" class="modal">
-    <div class="modal-contenido">
-        <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
-        <h2>🛍️ Carrito de Compras</h2>
-        <div id="listaCarrito"></div>
-        <p>Total: $<span id="totalCarrito">0</span></p>
-        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
-    </div>
-</section>
-
-<!-- Header mejorado con navegación -->
-<header>
-    <div class="logo-container">
-        <img src="images/Logo.png" alt="Logo GlowGirls Makeup" />
-        <h1>💅 GlowGirls Makeup 💅</h1>
+    <!-- 🔎 Barra de búsqueda con filtro -->
+    <div class="busqueda-container">
+        <input type="text" id="busqueda" placeholder="🔍 Buscar productos...">
+        <select id="filtro">
+            <option value="todo">Todos</option>
+            <option value="labiales">Labiales</option>
+            <option value="bases">Bases</option>
+            <option value="accesorios">Accesorios</option>
+        </select>
     </div>
 
-    <nav>
-        <ul>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#comentarios">Opiniones</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-            <li class="carrito-container">
-                <button id="verCarrito">🛒 Carrito (<span id="contadorCarrito">0</span>)</button>
-            </li>
-        </ul>
-    </nav>
-</header>
+    <!-- 🛍️ Header con navegación y botón de carrito -->
+    <header>
+        <div class="logo-container">
+            <img src="images/Logo.png" alt="Logo GlowGirls Makeup">
+            <h1>💅 GlowGirls Makeup 💅</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#comentarios">Opiniones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li class="carrito-container">
+                    <button id="verCarrito">🛒 Carrito (<span id="contadorCarrito">0</span>)</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- Modal del carrito -->
-<section id="carrito" class="modal">
-    <div class="modal-contenido">
-        <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
-        <h2>🛍️ Carrito de Compras</h2>
-        <div id="listaCarrito"></div>
-        <p>Total: $<span id="totalCarrito">0</span></p>
-        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
-    </div>
-</section>
+    <!-- 🛒 Modal del carrito -->
+    <section id="carrito" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
+            <h2>🛍️ Carrito de Compras</h2>
+            <div id="listaCarrito"></div>
+            <p>Total: $<span id="totalCarrito">0</span></p>
+            <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+        </div>
+    </section>
 
-
-<!-- Sección de productos -->
+    <!-- Sección de productos -->
 <section id="productos" class="productos">
     <h2>Nuestros Productos</h2>
 
@@ -144,43 +131,29 @@
     </div>
 </section>
 
-<!-- Sección de comentarios -->
-<section id="comentarios">
-    <h2>💬 Opiniones de Clientes</h2>
-    <div id="lista-comentarios"></div>
-    <textarea id="comentario" placeholder="Escribe tu opinión aquí..."></textarea>
-    <button onclick="agregarComentario()">Publicar</button>
-</section>
+    <!-- 💬 Sección de Opiniones -->
+    <section id="comentarios">
+        <h2>💬 Opiniones de Clientes</h2>
+        <div id="lista-comentarios"></div>
+        <textarea id="comentario" placeholder="Escribe tu opinión aquí..."></textarea>
+        <button onclick="agregarComentario()">Publicar</button>
+    </section>
 
-<!-- Footer -->
-<footer>
-    <p>&copy; 2025 GlowGirls Makeup</p>
-</footer>
+    <!-- 📞 Contacto -->
+    <section id="contacto" class="contacto">
+        <h2>Contacto</h2>
+        <p>📧 Correo: <a href="mailto:GlowGirls.Makeup@gmail.com">GlowGirls.Makeup@gmail.com</a></p>
+        <p>📞 Instagram: <a href="https://www.instagram.com/GlowGirls_MakeUp" target="_blank">@GlowGirls_MakeUp</a></p>
+    </section>
 
-<!-- Contacto -->
-<section id="contacto" class="contacto">
-    <h2>Contacto</h2>
-    <p>📧 Correo: <a href="mailto:GlowGirls.Makeup@gmail.com">GlowGirls.Makeup@gmail.com</a></p>
-    <p>📞 Instagram: <a href="https://www.instagram.com/GlowGirls_MakeUp" target="_blank">@GlowGirls_MakeUp</a></p>
-</section>
-<!-- Botón del carrito en el header -->
-<header>
-    <nav>
-        <ul>
-            <li><button id="verCarrito">🛒 Carrito (<span id="contadorCarrito">0</span>)</button></li>
-        </ul>
-    </nav>
-</header>
+    <!-- 👣 Footer -->
+    <footer>
+        <p>&copy; 2025 GlowGirls Makeup</p>
+    </footer>
 
-<header>
-    <nav>
-        <ul>
-            <li><button id="verCarrito">🛒 Carrito (<span id="contadorCarrito">0</span>)</button></li>
-        </ul>
-    </nav>
-</header>
+    <!-- 📜 Archivo JavaScript -->
+    <script src="script.js"></script>
 
-<!-- Script -->
-<script src="script.js"></script>
 </body>
 </html>
+
