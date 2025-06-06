@@ -116,6 +116,17 @@ body {
     justify-content: center;
 }
 
+.producto {
+    background: #c7ac93; /* Asegura que cada producto tenga su propio fondo */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 /* Tarjeta de cada producto */
 .producto {
     background: #ffffff;
