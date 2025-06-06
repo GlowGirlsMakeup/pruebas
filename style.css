@@ -167,4 +167,13 @@ button:hover {
     animation: fadeInUp 0.5s ease-in-out;
 }
 
+button {
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #8f6b54;
+    transform: scale(1.05);
+}
+
 
