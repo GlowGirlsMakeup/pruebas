@@ -182,3 +182,23 @@ body {
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
+
+.producto {
+    border: 2px solid #b58e72; /* Color beige elegante */
+    padding: 15px;
+    border-radius: 8px; /* Bordes más suaves */
+}
+
+.producto {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.producto::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #b58e72;
+    top: 5px;
+    left: 0;
+}
