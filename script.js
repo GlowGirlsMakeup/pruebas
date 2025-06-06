@@ -122,3 +122,18 @@ document.querySelectorAll(".producto button").forEach((boton) => {
         });
     }
 });
+
+document.getElementById("verCarrito").addEventListener("click", function () {
+    document.getElementById("carrito").style.display = "flex"; // ✅ Mostrará el carrito
+});
+
+function cerrarCarrito() {
+    document.getElementById("carrito").style.display = "none"; // ✅ Oculta el carrito
+}
+
+let carrito = [];
+
+function agregarAlCarrito(nombre, precio) {
+    carrito.push({ nombre, precio });
+    actualizarCarrito();
+}
