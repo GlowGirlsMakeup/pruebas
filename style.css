@@ -176,4 +176,25 @@ button:hover {
     transform: scale(1.05);
 }
 
+body {
+    background-image: url('images/fondo.png'); /* Ruta de la imagen */
+    background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
 
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(245, 231, 219, 0.6); /* Beige con transparencia */
+}
+
+body {
+    background: linear-gradient(rgba(245, 231, 219, 0.5), rgba(181, 142, 114, 0.5)), url('images/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+}
