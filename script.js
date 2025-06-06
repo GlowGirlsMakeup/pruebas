@@ -57,3 +57,25 @@ document.getElementById("botonAccion").addEventListener("click", function() {
 document.getElementById("botonAccion").addEventListener("click", function() {
     document.getElementById("portada").style.display = "none"; 
 });
+
+function mostrarImagen(elemento) {
+    let modal = document.getElementById("modal");
+    let imagen = document.getElementById("imagenAmpliada");
+    let video = document.getElementById("videoAmpliado");
+
+    modal.style.display = "flex";
+
+    if (elemento.tagName === "VIDEO") {
+        imagen.style.display = "none";
+        video.style.display = "block";
+        video.src = elemento.querySelector("source").src;
+    } else {
+        video.style.display = "none";
+        imagen.style.display = "block";
+        imagen.src = elemento.src;
+    }
+}
+
+function cerrarImagen() {
+    document.getElementById("modal").style.display = "none";
+}
