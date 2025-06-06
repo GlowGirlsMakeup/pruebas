@@ -4,10 +4,13 @@ document.querySelectorAll("button").forEach((btn) => {
   });
 });
 
-const slider = document.getElementById('slider');
-const despues = document.querySelector('.despues');
-
-slider.addEventListener('input', (event) => {
-    let value = event.target.value;
-    despues.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
-});
+function agregarComentario() {
+    let comentario = document.getElementById("comentario").value;
+    if (comentario.trim() !== "") {
+        let lista = document.getElementById("lista-comentarios");
+        let nuevoComentario = document.createElement("p");
+        nuevoComentario.textContent = comentario;
+        lista.appendChild(nuevoComentario);
+        document.getElementById("comentario").value = ""; // Limpiar campo
+    }
+}
