@@ -257,11 +257,11 @@ h1 {
     background-color: #f7eddc;
 }
 
-#elemento {
+#busqueda {
     margin-top: 20px; /* Aumenta el espacio arriba */
 }
 
-#elemento {
+#busqueda {
     position: relative;
     top: 20px; /* Mueve hacia abajo */
 }
