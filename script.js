@@ -113,4 +113,38 @@ document.querySelectorAll(".producto button").forEach((boton, index) => {
     });
 });
 
+let carrito = [];
 
+function agregarAlCarrito(nombre, precio) {
+    carrito.push({ nombre, precio });
+    actualizarCarrito();
+}
+
+function actualizarCarrito() {
+    let listaCarrito = document.getElementById("listaCarrito");
+    let total = 0;
+    listaCarrito.innerHTML = "";
+
+    carrito.forEach((item, index) => {
+        let productoCarrito = document.createElement("p");
+        productoCarrito.textContent = `${item.nombre} - $${item.precio}`;
+        listaCarrito.appendChild(productoCarrito);
+        total += item.precio;
+    });
+
+    document.getElementById("totalCarrito").textContent = total;
+    document.getElementById("contadorCarrito").textContent = carrito.length;
+}
+
+function vaciarCarrito() {
+    carrito = [];
+    actualizarCarrito();
+}
+
+document.getElementById("verCarrito").addEventListener("click", function () {
+    document.getElementById("carrito").style.display = "flex";
+});
+
+function cerrarCarrito() {
+    document.getElementById("carrito").style.display = "none";
+}
