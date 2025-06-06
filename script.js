@@ -127,5 +127,3 @@ document.querySelectorAll(".producto button").forEach((boton) => {
         });
     }
 });
-
-
