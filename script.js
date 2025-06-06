@@ -1,4 +1,4 @@
-// 🚀 Manejo de botones
+// 🚀 Efecto de transformación en botones
 document.querySelectorAll("button").forEach((btn) => {
     btn.addEventListener("click", () => {
         btn.style.transform = "scale(1.05)";
@@ -20,10 +20,8 @@ function agregarComentario() {
         comentariosGuardados.push(comentario);
         localStorage.setItem("comentarios", JSON.stringify(comentariosGuardados));
 
-        // Limpiar campo
+        // Limpiar campo y animación en comentario nuevo
         document.getElementById("comentario").value = "";
-
-        // Animación de entrada en nuevo comentario
         nuevoComentario.style.opacity = "0";
         nuevoComentario.style.transform = "translateY(10px)";
         setTimeout(() => {
@@ -33,7 +31,7 @@ function agregarComentario() {
     }
 }
 
-// 🔄 Cargar comentarios al abrir la página
+// 🔄 Cargar comentarios almacenados
 window.addEventListener("load", () => {
     let comentariosGuardados = JSON.parse(localStorage.getItem("comentarios")) || [];
     let lista = document.getElementById("lista-comentarios");
@@ -66,6 +64,7 @@ document.getElementById("botonAccion").addEventListener("click", function() {
     setTimeout(() => portada.style.display = "none", 800);
 });
 
+// 🛒 Carrito de compras
 let carrito = [];
 
 function agregarAlCarrito(nombre, precio) {
@@ -79,8 +78,12 @@ function actualizarCarrito() {
     listaCarrito.innerHTML = "";
 
     carrito.forEach((item, index) => {
-        let productoCarrito = document.createElement("p");
-        productoCarrito.textContent = `${item.nombre} - $${item.precio}`;
+        let productoCarrito = document.createElement("div");
+        productoCarrito.classList.add("item-carrito");
+        productoCarrito.innerHTML = `
+            <p>${item.nombre} - $${item.precio}</p>
+            <button class="eliminar" onclick="eliminarDelCarrito(${index})">❌</button>
+        `;
         listaCarrito.appendChild(productoCarrito);
         total += item.precio;
     });
@@ -89,11 +92,17 @@ function actualizarCarrito() {
     document.getElementById("contadorCarrito").textContent = carrito.length;
 }
 
+function eliminarDelCarrito(index) {
+    carrito.splice(index, 1);
+    actualizarCarrito();
+}
+
 function vaciarCarrito() {
     carrito = [];
     actualizarCarrito();
 }
 
+// 🛒 Mostrar y ocultar carrito
 document.getElementById("verCarrito").addEventListener("click", function () {
     document.getElementById("carrito").style.display = "flex";
 });
@@ -102,13 +111,14 @@ function cerrarCarrito() {
     document.getElementById("carrito").style.display = "none";
 }
 
-// Integración con los productos
-document.querySelectorAll(".producto button").forEach((boton, index) => {
-    boton.addEventListener("click", () => {
-        let producto = boton.closest(".producto");
-        let nombre = producto.querySelector("p").textContent.split(" - ")[0];
-        let precio = parseFloat(producto.querySelector("p").textContent.split("$")[1]);
-
-        agregarAlCarrito(nombre, precio);
-    });
+// 🔥 Integración con los productos - Añadir al carrito
+document.querySelectorAll(".producto button").forEach((boton) => {
+    if (boton.innerText === "Añadir al Carrito") { // Filtrar solo los botones correctos
+        boton.addEventListener("click", () => {
+            let producto = boton.closest(".producto");
+            let nombre = producto.querySelector("p").textContent.split(" - ")[0];
+            let precio = parseFloat(producto.querySelector("p").textContent.split("$")[1]);
+            agregarAlCarrito(nombre, precio);
+        });
+    }
 });
