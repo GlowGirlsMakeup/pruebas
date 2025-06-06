@@ -51,3 +51,36 @@ enlacesWhatsApp.forEach(enlace => {
         localStorage.setItem("mostrarModal", "true");
     });
 });
+
+window.addEventListener("focus", function () {
+    if (localStorage.getItem("mostrarModal") === "true") {
+        setTimeout(abrirModal, 2000); // Mostrar después de 2 segundos
+        localStorage.removeItem("mostrarModal"); // Limpiar el estado
+    }
+});
+
+function abrirModal() {
+    document.getElementById("modalValoracion").style.display = "flex";
+}
+
+function cerrarModal() {
+    document.getElementById("modalValoracion").style.display = "none";
+}
+
+// Detectar si el usuario accedió a WhatsApp
+let enlaceCompra = document.querySelectorAll("a[href*='wa.me']");
+
+enlaceCompra.forEach(enlace => {
+    enlace.addEventListener("click", function() {
+        localStorage.setItem("mostrarModal", "true");
+    });
+});
+
+// Mostrar el modal solo si el usuario volvió de WhatsApp
+window.addEventListener("load", function () {
+    if (localStorage.getItem("mostrarModal") === "true") {
+        setTimeout(abrirModal, 2000); // Mostrar después de 2 segundos
+        localStorage.removeItem("mostrarModal"); // Limpiar el estado
+    }
+});
+
