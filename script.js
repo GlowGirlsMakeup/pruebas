@@ -58,3 +58,6 @@ document.getElementById("botonAccion").addEventListener("click", function() {
     document.getElementById("portada").style.display = "none"; 
 });
 
+document.getElementById("explorar").addEventListener("click", function() {
+    document.getElementById("productos").scrollIntoView({ behavior: "smooth" });
+});
