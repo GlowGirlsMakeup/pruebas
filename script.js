@@ -43,27 +43,11 @@ window.onload = function() {
     });
 };
 
-function abrirModal() {
-    document.getElementById("modalValoracion").style.display = "flex";
-}
+console.log("Estado de LocalStorage:", localStorage.getItem("mostrarModal"));
 
-function cerrarModal() {
-    document.getElementById("modalValoracion").style.display = "none";
-}
-
-// Detectar si el usuario accedió a WhatsApp
-let enlaceCompra = document.querySelectorAll("a[href*='wa.me']");
-
-enlaceCompra.forEach(enlace => {
+let enlacesWhatsApp = document.querySelectorAll("a[href*='wa.me'], a[href*='whatsapp']");
+enlacesWhatsApp.forEach(enlace => {
     enlace.addEventListener("click", function() {
         localStorage.setItem("mostrarModal", "true");
     });
-});
-
-// Mostrar el modal solo si el usuario volvió de WhatsApp
-window.addEventListener("load", function () {
-    if (localStorage.getItem("mostrarModal") === "true") {
-        setTimeout(abrirModal, 2000); // Mostrar después de 2 segundos
-        localStorage.removeItem("mostrarModal"); // Limpiar el estado
-    }
 });
