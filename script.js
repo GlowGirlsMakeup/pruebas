@@ -62,11 +62,16 @@ window.addEventListener("load", () => {
     });
 });
 
-// 🛒 Carrito de compras
+// 🛒 Carrito de compras optimizado
 let carrito = [];
 
 function agregarAlCarrito(nombre, precio) {
-    carrito.push({ nombre, precio });
+    let existe = carrito.find(item => item.nombre === nombre);
+    if (existe) {
+        existe.cantidad += 1; // 💡 Si el producto ya está, aumenta cantidad
+    } else {
+        carrito.push({ nombre, precio, cantidad: 1 });
+    }
     actualizarCarrito();
 }
 
@@ -79,14 +84,14 @@ function actualizarCarrito() {
         let productoCarrito = document.createElement("div");
         productoCarrito.classList.add("item-carrito");
         productoCarrito.innerHTML = `
-            <p>${item.nombre} - $${item.precio}</p>
+            <p>${item.nombre} - $${item.precio} x ${item.cantidad}</p>
             <button class="eliminar" onclick="eliminarDelCarrito(${index})">❌</button>
         `;
         listaCarrito.appendChild(productoCarrito);
-        total += item.precio;
+        total += item.precio * item.cantidad; // 💡 Multiplicar por la cantidad
     });
 
-    document.getElementById("totalCarrito").textContent = total;
+    document.getElementById("totalCarrito").textContent = total.toFixed(2); // 💡 Mostrar con formato correcto
     document.getElementById("contadorCarrito").textContent = carrito.length;
 }
 
@@ -110,28 +115,7 @@ function cerrarCarrito() {
     document.getElementById("carrito").style.display = "none";
 }
 
-// 🔥 Integración con los productos - Filtrando correctamente los botones "Añadir al Carrito"
-document.querySelectorAll(".producto button").forEach((boton) => {
-    if (boton.textContent.includes("Añadir al Carrito")) { 
-        boton.addEventListener("click", () => {
-            let producto = boton.closest(".producto");
-            let nombre = producto.querySelector("p").textContent.split(" - ")[0];
-            let precio = parseFloat(producto.querySelector("p").textContent.split("$")[1]);
-            agregarAlCarrito(nombre, precio);
-        });
-    }
-});
-
-function agregarAlCarrito(nombre, precio) {
-    let existe = carrito.find(item => item.nombre === nombre);
-    if (!existe) {
-        carrito.push({ nombre, precio });
-    } else {
-        existe.cantidad = (existe.cantidad || 1) + 1;
-    }
-    actualizarCarrito();
-}
-
+// 🔥 Integración con los productos - Ajustando evento de clic correctamente
 document.querySelectorAll(".producto button").forEach((boton) => {
     if (boton.textContent.includes("Añadir al Carrito")) {
         boton.addEventListener("click", () => {
