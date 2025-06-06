@@ -121,3 +121,25 @@ document.querySelectorAll(".producto button").forEach((boton) => {
         });
     }
 });
+
+function agregarAlCarrito(nombre, precio) {
+    let existe = carrito.find(item => item.nombre === nombre);
+    if (!existe) {
+        carrito.push({ nombre, precio });
+    } else {
+        existe.cantidad = (existe.cantidad || 1) + 1;
+    }
+    actualizarCarrito();
+}
+
+document.querySelectorAll(".producto button").forEach((boton) => {
+    if (boton.textContent.includes("Añadir al Carrito")) {
+        boton.addEventListener("click", () => {
+            let producto = boton.closest(".producto");
+            let nombre = producto.querySelector("p").textContent.split(" - ")[0];
+            let precioTexto = producto.querySelector("p").textContent.split("$")[1];
+            let precio = parseFloat(precioTexto.replace(",", "").trim()); // 💡 Se limpia y convierte correctamente
+            agregarAlCarrito(nombre, precio);
+        });
+    }
+});
