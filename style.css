@@ -256,3 +256,12 @@ h1 {
     outline: none;
     background-color: #f7eddc;
 }
+
+#elemento {
+    margin-top: 20px; /* Aumenta el espacio arriba */
+}
+
+#elemento {
+    position: relative;
+    top: 20px; /* Mueve hacia abajo */
+}
