@@ -43,44 +43,10 @@ window.onload = function() {
     });
 };
 
-console.log("Estado de LocalStorage:", localStorage.getItem("mostrarModal"));
-
-let enlacesWhatsApp = document.querySelectorAll("a[href*='wa.me'], a[href*='whatsapp']");
-enlacesWhatsApp.forEach(enlace => {
-    enlace.addEventListener("click", function() {
-        localStorage.setItem("mostrarModal", "true");
+document.getElementById("busqueda").addEventListener("input", function() {
+    let query = this.value.toLowerCase();
+    document.querySelectorAll(".producto").forEach(producto => {
+        producto.style.display = producto.innerText.toLowerCase().includes(query) ? "block" : "none";
     });
-});
-
-window.addEventListener("focus", function () {
-    if (localStorage.getItem("mostrarModal") === "true") {
-        setTimeout(abrirModal, 2000); // Mostrar después de 2 segundos
-        localStorage.removeItem("mostrarModal"); // Limpiar el estado
-    }
-});
-
-function abrirModal() {
-    document.getElementById("modalValoracion").style.display = "flex";
-}
-
-function cerrarModal() {
-    document.getElementById("modalValoracion").style.display = "none";
-}
-
-// Detectar si el usuario accedió a WhatsApp
-let enlaceCompra = document.querySelectorAll("a[href*='wa.me']");
-
-enlaceCompra.forEach(enlace => {
-    enlace.addEventListener("click", function() {
-        localStorage.setItem("mostrarModal", "true");
-    });
-});
-
-// Mostrar el modal solo si el usuario volvió de WhatsApp
-window.addEventListener("load", function () {
-    if (localStorage.getItem("mostrarModal") === "true") {
-        setTimeout(abrirModal, 2000); // Mostrar después de 2 segundos
-        localStorage.removeItem("mostrarModal"); // Limpiar el estado
-    }
 });
 
