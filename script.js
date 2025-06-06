@@ -61,3 +61,13 @@ document.getElementById("botonAccion").addEventListener("click", function() {
 document.getElementById("explorar").addEventListener("click", function() {
     document.getElementById("productos").scrollIntoView({ behavior: "smooth" });
 });
+
+let productos = document.querySelectorAll(".producto");
+window.addEventListener("scroll", function() {
+    productos.forEach(producto => {
+        let posicion = producto.getBoundingClientRect().top;
+        if (posicion < window.innerHeight - 50) {
+            producto.classList.add("visible");
+        }
+    });
+});
