@@ -30,6 +30,34 @@
     </select>
 </div>
 
+<!-- Botón del carrito en el header -->
+<header>
+    <nav>
+        <ul>
+            <li><button id="verCarrito">🛒 Carrito (<span id="contadorCarrito">0</span>)</button></li>
+        </ul>
+    </nav>
+</header>
+
+<header>
+    <nav>
+        <ul>
+            <li><button id="verCarrito">🛒 Carrito (<span id="contadorCarrito">0</span>)</button></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Modal del carrito -->
+<section id="carrito" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
+        <h2>🛍️ Carrito de Compras</h2>
+        <div id="listaCarrito"></div>
+        <p>Total: $<span id="totalCarrito">0</span></p>
+        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+    </div>
+</section>
+
 <!-- Header mejorado con navegación -->
 <header>
     <div class="logo-container">
@@ -152,18 +180,6 @@
         </ul>
     </nav>
 </header>
-
-<!-- Modal del carrito -->
-<section id="carrito" class="modal">
-    <div class="modal-contenido">
-        <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
-        <h2>🛍️ Carrito de Compras</h2>
-        <div id="listaCarrito"></div>
-        <p>Total: $<span id="totalCarrito">0</span></p>
-        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
-    </div>
-</section>
-
 
 <!-- Script -->
 <script src="script.js"></script>

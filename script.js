@@ -130,10 +130,3 @@ document.getElementById("verCarrito").addEventListener("click", function () {
 function cerrarCarrito() {
     document.getElementById("carrito").style.display = "none"; // ✅ Oculta el carrito
 }
-
-let carrito = [];
-
-function agregarAlCarrito(nombre, precio) {
-    carrito.push({ nombre, precio });
-    actualizarCarrito();
-}
