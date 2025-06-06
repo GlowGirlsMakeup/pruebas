@@ -1,40 +1,3 @@
-// 🛒 Mostrar y ocultar carrito
-document.getElementById("verCarrito").addEventListener("click", function () {
-    document.getElementById("carrito").style.display = "flex";
-});
-
-function cerrarCarrito() {
-    document.getElementById("carrito").style.display = "none";
-}
-
-// 🔥 Integración con los productos - Añadir al carrito
-document.querySelectorAll(".producto button").forEach((boton) => {
-    if (boton.innerText === "Añadir al Carrito") { // Filtrar solo los botones correctos
-        boton.addEventListener("click", () => {
-            let producto = boton.closest(".producto");
-            let nombre = producto.querySelector("p").textContent.split(" - ")[0];
-            let precio = parseFloat(producto.querySelector("p").textContent.split("$")[1]);
-            agregarAlCarrito(nombre, precio);
-        });
-    }
-});
-
-document.getElementById("verCarrito").addEventListener("click", function () {
-    document.getElementById("carrito").style.display = "flex"; // ✅ Mostrará el carrito
-});
-
-function cerrarCarrito() {
-    document.getElementById("carrito").style.display = "none"; // ✅ Oculta el carrito
-}
-
-// 🚀 Efecto de transformación en botones
-document.querySelectorAll("button").forEach((btn) => {
-    btn.addEventListener("click", () => {
-        btn.style.transform = "scale(1.05)";
-        setTimeout(() => btn.style.transform = "scale(1)", 200);
-    });
-});
-
 // 💬 Agregar comentarios y guardarlos en LocalStorage
 function agregarComentario() {
     let comentario = document.getElementById("comentario").value.trim();
@@ -130,3 +93,62 @@ function vaciarCarrito() {
     carrito = [];
     actualizarCarrito();
 }
+
+let carrito = [];
+
+function agregarAlCarrito(nombre, precio) {
+    carrito.push({ nombre, precio });
+    actualizarCarrito();
+}
+
+function actualizarCarrito() {
+    let listaCarrito = document.getElementById("listaCarrito");
+    let total = 0;
+    listaCarrito.innerHTML = "";
+
+    carrito.forEach((item, index) => {
+        let productoCarrito = document.createElement("div");
+        productoCarrito.classList.add("item-carrito");
+        productoCarrito.innerHTML = `
+            <p>${item.nombre} - $${item.precio}</p>
+            <button class="eliminar" onclick="eliminarDelCarrito(${index})">❌</button>
+        `;
+        listaCarrito.appendChild(productoCarrito);
+        total += item.precio;
+    });
+
+    document.getElementById("totalCarrito").textContent = total;
+    document.getElementById("contadorCarrito").textContent = carrito.length;
+}
+
+function eliminarDelCarrito(index) {
+    carrito.splice(index, 1);
+    actualizarCarrito();
+}
+
+function vaciarCarrito() {
+    carrito = [];
+    actualizarCarrito();
+}
+
+// 🛒 Mostrar y ocultar carrito
+document.getElementById("verCarrito").addEventListener("click", function () {
+    let carrito = document.getElementById("carrito");
+    carrito.style.display = carrito.style.display === "block" ? "none" : "block";
+});
+
+function cerrarCarrito() {
+    document.getElementById("carrito").style.display = "none";
+}
+
+// 🔥 Integración con los productos
+document.querySelectorAll(".producto button").forEach((boton) => {
+    if (boton.innerText === "Añadir al Carrito") { 
+        boton.addEventListener("click", () => {
+            let producto = boton.closest(".producto");
+            let nombre = producto.querySelector("p").textContent.split(" - ")[0];
+            let precio = parseFloat(producto.querySelector("p").textContent.split("$")[1]);
+            agregarAlCarrito(nombre, precio);
+        });
+    }
+});
