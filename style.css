@@ -225,3 +225,9 @@ button {
     border: none;
     cursor: pointer;
 }
+
+h2 {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
