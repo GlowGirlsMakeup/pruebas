@@ -1,3 +1,32 @@
+// 🛒 Mostrar y ocultar carrito
+document.getElementById("verCarrito").addEventListener("click", function () {
+    document.getElementById("carrito").style.display = "flex";
+});
+
+function cerrarCarrito() {
+    document.getElementById("carrito").style.display = "none";
+}
+
+// 🔥 Integración con los productos - Añadir al carrito
+document.querySelectorAll(".producto button").forEach((boton) => {
+    if (boton.innerText === "Añadir al Carrito") { // Filtrar solo los botones correctos
+        boton.addEventListener("click", () => {
+            let producto = boton.closest(".producto");
+            let nombre = producto.querySelector("p").textContent.split(" - ")[0];
+            let precio = parseFloat(producto.querySelector("p").textContent.split("$")[1]);
+            agregarAlCarrito(nombre, precio);
+        });
+    }
+});
+
+document.getElementById("verCarrito").addEventListener("click", function () {
+    document.getElementById("carrito").style.display = "flex"; // ✅ Mostrará el carrito
+});
+
+function cerrarCarrito() {
+    document.getElementById("carrito").style.display = "none"; // ✅ Oculta el carrito
+}
+
 // 🚀 Efecto de transformación en botones
 document.querySelectorAll("button").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -100,33 +129,4 @@ function eliminarDelCarrito(index) {
 function vaciarCarrito() {
     carrito = [];
     actualizarCarrito();
-}
-
-// 🛒 Mostrar y ocultar carrito
-document.getElementById("verCarrito").addEventListener("click", function () {
-    document.getElementById("carrito").style.display = "flex";
-});
-
-function cerrarCarrito() {
-    document.getElementById("carrito").style.display = "none";
-}
-
-// 🔥 Integración con los productos - Añadir al carrito
-document.querySelectorAll(".producto button").forEach((boton) => {
-    if (boton.innerText === "Añadir al Carrito") { // Filtrar solo los botones correctos
-        boton.addEventListener("click", () => {
-            let producto = boton.closest(".producto");
-            let nombre = producto.querySelector("p").textContent.split(" - ")[0];
-            let precio = parseFloat(producto.querySelector("p").textContent.split("$")[1]);
-            agregarAlCarrito(nombre, precio);
-        });
-    }
-});
-
-document.getElementById("verCarrito").addEventListener("click", function () {
-    document.getElementById("carrito").style.display = "flex"; // ✅ Mostrará el carrito
-});
-
-function cerrarCarrito() {
-    document.getElementById("carrito").style.display = "none"; // ✅ Oculta el carrito
 }

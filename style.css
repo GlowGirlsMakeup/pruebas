@@ -82,6 +82,76 @@ body {
     transform: scale(1.1);
 }
 
+/* Estilos para el carrito */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: right;
+    align-items: right;
+}
+
+.modal-contenido {
+    background: #f7eddc;
+    padding: 20px;
+    width: 40%;
+    text-align: right;
+    border-radius: 8px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cerrar {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#verCarrito {
+    background-color: #b58e72;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#verCarrito:hover {
+    background-color: #8f6b54;
+}
+
+button {
+    background-color: #b58e72;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #8f6b54;
+    transform: scale(1.05);
+}
+
+.modal {
+    display: none; /* Se mostrará cuando se active */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: right;
+    align-items: right;
+}
+
 /* Contenedor de búsqueda */
 .busqueda-container {
     width: 100%;
