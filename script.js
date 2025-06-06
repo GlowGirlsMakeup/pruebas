@@ -43,26 +43,6 @@ window.onload = function() {
     });
 };
 
-document.querySelectorAll(".estrella").forEach((estrella) => {
-    estrella.addEventListener("click", function () {
-        let valor = this.getAttribute("data-valor");
-        document.querySelectorAll(".estrella").forEach(e => e.classList.remove("activa"));
-        for (let i = 0; i < valor; i++) {
-            document.querySelectorAll(".estrella")[i].classList.add("activa");
-        }
-    });
-});
-
-function guardarValoracion() {
-    let comentario = document.getElementById("comentario").value;
-    let estrellasSeleccionadas = document.querySelectorAll(".estrella.activa").length;
-    if (estrellasSeleccionadas > 0 && comentario.trim() !== "") {
-        alert(`Gracias por tu valoración de ${estrellasSeleccionadas} estrellas. Tu comentario: "${comentario}"`);
-    } else {
-        alert("Por favor, deja una valoración y un comentario antes de enviar.");
-    }
-}
-
 function abrirModal() {
     document.getElementById("modalValoracion").style.display = "flex";
 }
@@ -71,29 +51,19 @@ function cerrarModal() {
     document.getElementById("modalValoracion").style.display = "none";
 }
 
-// Activar el modal cuando el usuario regresa de WhatsApp
-window.addEventListener("load", function () {
-    setTimeout(abrirModal, 2000); // Mostrar después de 2 segundos
-});
+// Detectar si el usuario accedió a WhatsApp
+let enlaceCompra = document.querySelectorAll("a[href*='wa.me']");
 
-// Manejo de estrellas y comentarios
-document.querySelectorAll(".estrella").forEach((estrella) => {
-    estrella.addEventListener("click", function () {
-        let valor = this.getAttribute("data-valor");
-        document.querySelectorAll(".estrella").forEach(e => e.classList.remove("activa"));
-        for (let i = 0; i < valor; i++) {
-            document.querySelectorAll(".estrella")[i].classList.add("activa");
-        }
+enlaceCompra.forEach(enlace => {
+    enlace.addEventListener("click", function() {
+        localStorage.setItem("mostrarModal", "true");
     });
 });
 
-function guardarValoracion() {
-    let comentario = document.getElementById("comentario").value;
-    let estrellasSeleccionadas = document.querySelectorAll(".estrella.activa").length;
-    if (estrellasSeleccionadas > 0 && comentario.trim() !== "") {
-        alert(`Gracias por tu valoración de ${estrellasSeleccionadas} estrellas. Tu comentario: "${comentario}"`);
-        cerrarModal();
-    } else {
-        alert("Por favor, deja una valoración y un comentario antes de enviar.");
+// Mostrar el modal solo si el usuario volvió de WhatsApp
+window.addEventListener("load", function () {
+    if (localStorage.getItem("mostrarModal") === "true") {
+        setTimeout(abrirModal, 2000); // Mostrar después de 2 segundos
+        localStorage.removeItem("mostrarModal"); // Limpiar el estado
     }
-}
+});
