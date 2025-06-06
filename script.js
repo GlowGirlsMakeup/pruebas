@@ -59,4 +59,6 @@ document.getElementById("botonAccion").addEventListener("click", function() {
     document.getElementById("portada").style.display = "none"; 
 });
 
+window.location.href = "gracias.html";
+
 
