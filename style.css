@@ -11,14 +11,6 @@ body {
     background-repeat: no-repeat;
 }
 
-#imagenPrincipal {
-    width: 70%; /* Ajusta el tamaño de la imagen */
-    max-width: 600px; /* Establece un límite */
-    height: auto; /* Mantiene la proporción */
-    display: block;
-    margin: 0 auto; /* Centra la imagen */
-}
-
 /* 🏠 Estilos para la Portada */
 #portada {
     display: flex;
