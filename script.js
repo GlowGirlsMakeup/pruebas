@@ -105,6 +105,64 @@ function vaciarCarrito() {
     actualizarCarrito();
 }
 
+let carrito = [];
+
+function agregarAlCarrito(nombre, precio) {
+    let existe = carrito.find(item => item.nombre === nombre);
+
+    if (existe) {
+        existe.cantidad += 1; // 💡 Si ya existe, solo aumenta cantidad
+    } else {
+        carrito.push({ nombre, precio, cantidad: 1 });
+    }
+
+    actualizarCarrito();
+}
+
+function actualizarCarrito() {
+    let listaCarrito = document.getElementById("listaCarrito");
+    let total = 0;
+    listaCarrito.innerHTML = "";
+
+    carrito.forEach((item, index) => {
+        let productoCarrito = document.createElement("div");
+        productoCarrito.classList.add("item-carrito");
+        productoCarrito.innerHTML = `
+            <p>${item.nombre} - $${item.precio} x ${item.cantidad}</p>
+            <button class="eliminar" onclick="eliminarDelCarrito(${index})">❌</button>
+        `;
+        listaCarrito.appendChild(productoCarrito);
+        total += item.precio * item.cantidad;
+    });
+
+    document.getElementById("totalCarrito").textContent = total.toFixed(2);
+    document.getElementById("contadorCarrito").textContent = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+}
+
+function eliminarDelCarrito(index) {
+    carrito.splice(index, 1);
+    actualizarCarrito();
+}
+
+function vaciarCarrito() {
+    carrito = [];
+    actualizarCarrito();
+}
+
+// 🛒 Ajuste en el registro de eventos para evitar múltiples clics innecesarios
+document.querySelectorAll(".producto button").forEach((boton) => {
+    if (boton.textContent.includes("Añadir al Carrito")) {
+        boton.addEventListener("click", function () {
+            let producto = boton.closest(".producto");
+            let nombre = producto.querySelector("p").textContent.split(" - ")[0];
+            let precioTexto = producto.querySelector("p").textContent.split("$")[1];
+            let precio = parseFloat(precioTexto.replace(",", "").trim());
+            agregarAlCarrito(nombre, precio);
+        }, { once: true }); // 💡 Esto asegura que el evento solo se registre una vez
+    }
+});
+
+
 // 🛒 Mostrar y ocultar carrito correctamente
 document.getElementById("verCarrito").addEventListener("click", function () {
     let carritoModal = document.getElementById("carrito");
