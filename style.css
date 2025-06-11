@@ -11,6 +11,14 @@ body {
     background-repeat: no-repeat;
 }
 
+#imagenPrincipal {
+    width: 70%; /* Ajusta el tamaño de la imagen */
+    max-width: 600px; /* Establece un límite */
+    height: auto; /* Mantiene la proporción */
+    display: block;
+    margin: 0 auto; /* Centra la imagen */
+}
+
 /* 🏠 Estilos para la Portada */
 #portada {
     display: flex;
@@ -232,18 +240,5 @@ footer {
     font-size: 14px;
 }
 
-.producto img {
-    width: 80%; /* Ajusta el tamaño de la imagen */
-    max-width: 120px; /* Establece un límite máximo */
-    height: auto; /* Mantiene la proporción */
-    display: block; /* Evita problemas con espacios extra */
-    margin: 0 auto; /* Centra la imagen dentro de su contenedor */
-}
 
-.grid {
-    display: flex;
-    justify-content: center; /* Alinea los productos */
-    gap: 15px; /* Espaciado entre productos */
-    flex-wrap: wrap; /* Permite adaptación en diferentes pantallas */
-}
 
