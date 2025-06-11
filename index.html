@@ -8,26 +8,16 @@
 </head>
 <body>
 
-    <!-- 🏠 Portada con imagen ajustada -->
+    <!-- 🏠 Portada con video de fondo -->
     <section id="portada">
-        <img src="images/tu-imagen-ajustada.png" alt="Portada GlowGirls Makeup" id="imagenPrincipal">
+        <video autoplay loop muted id="videoFondo">
+            <source src="videos/glowgirls.mp4" type="video/mp4">
+        </video>
         <div class="contenido-portada">
             <h1 class="titulo">💄 Bienvenido a GlowGirls Makeup 💄</h1>
             <button id="botonAccion">Explorar Productos</button>
         </div>
     </section>
-
-    <!-- 🔎 Barra de búsqueda con filtro -->
-    <div class="busqueda-container">
-        <input type="text" id="busqueda" placeholder="🔍 Buscar productos...">
-    </div>
-
-    <!-- 📜 Archivo JavaScript -->
-    <script src="script.js"></script>
-
-</body>
-</html>
-
 
     <!-- 🔎 Barra de búsqueda con filtro -->
     <div class="busqueda-container">
@@ -117,7 +107,7 @@
             <div class="producto">
                 <img src="images/Arqueador.png" alt="Arqueador" />
                 <p>Arqueador - $6.000</p>
-                <button onclick="agregarAlCarrito('Arqueador', 6000)">Añadir al Carrito</button>
+                <button onclick="agregarAlCarrito('Arqueador', 600)">Añadir al Carrito</button>
                 <a href="https://wa.me/5491130126909?text=Hola,%20quiero%20mas%20informacion%20de%20......" target="_blank">
                     <button>Hablar por WhatsApp</button>
                 </a>
