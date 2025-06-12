@@ -141,7 +141,6 @@ function actualizarMapa() {
     }
 }
 
-
 // 📍Maps
 function comprar() {
     if (carrito.length === 0) {
@@ -160,8 +159,7 @@ function comprar() {
 
     let totalFinal = carrito.reduce((sum, producto) => sum + producto.precio, 0) + (envioSeleccionado === "express" ? 1500 : 500);
 
-    let mensaje = `Hola, quiero realizar una compra con un total de $${totalFinal}. Métodos de pago: ${metodoPago}. 
-    Envío seleccionado: ${envioSeleccionado}. 
+    let mensaje = `Hola, quiero realizar una compra con un total de $${totalFinal}. Métodos de pago: ${metodoPago}.
     Dirección: ${direccion}.`;
 
     let whatsappURL = `https://api.whatsapp.com/send?phone=5491130126909&text=${encodeURIComponent(mensaje)}`;
