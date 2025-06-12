@@ -25,6 +25,31 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+function toggleExpand(element) {
+    // Si el producto ya está expandido, lo contrae
+    if (element.classList.contains("expandido")) {
+        element.classList.remove("expandido");
+        return;
+    }
+
+    // Cierra cualquier otro producto expandido antes de abrir uno nuevo
+    document.querySelectorAll(".producto.expandido").forEach(prod => prod.classList.remove("expandido"));
+
+    // Expande el producto actual
+    element.classList.add("expandido");
+}
+
+// 🚀 Cerrar el producto al hacer clic fuera
+document.addEventListener("click", function(event) {
+    let productos = document.querySelectorAll(".producto");
+
+    productos.forEach(producto => {
+        if (!producto.contains(event.target) && !event.target.classList.contains("btn-comprar")) {
+            producto.classList.remove("expandido");
+        }
+    });
+});
+
 
 // 🛒 Carrito de compras
 let carrito = [];
