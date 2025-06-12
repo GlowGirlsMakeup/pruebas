@@ -104,13 +104,7 @@ function comprar() {
 
     let metodoPago = document.getElementById("metodoPago").value;
     let totalFinal = totalCarrito + costoEnvio;
-
-    // 📦 Redirigir a WhatsApp con los detalles del pedido
-    let mensaje = `Hola, quiero realizar una compra con un total de $${totalFinal}. Métodos de pago: ${metodoPago}. Envío seleccionado: ${document.getElementById("metodoEnvio").value}.`;
-    let whatsappURL = `https://wa.me/5491130126909?text=${encodeURIComponent(mensaje)}`;
-
-    window.open(whatsappURL, "_blank");
-
+    
     // 💳 Redirigir a MercadoPago (simulado)
     if (metodoPago === "mercadopago") {
         window.open("https://www.mercadopago.com.ar/", "_blank");
