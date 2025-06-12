@@ -250,11 +250,11 @@ body {
     transition: opacity 0.3s ease-in-out;
 }
 
-/* Mostrar detalles cuando el producto está expandido */
 .producto.expandido .detalle {
     display: block;
     opacity: 1;
 }
+
 
 
 

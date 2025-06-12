@@ -41,8 +41,16 @@ function agregarAlCarritoDesdeModal() {
 
 // 🛒 ventana emergente
 function toggleExpand(element) {
-    element.classList.toggle("expandido");
+    // Verifica si ya está expandido
+    if (element.classList.contains("expandido")) {
+        element.classList.remove("expandido");
+    } else {
+        element.classList.add("expandido");
+    }
 }
+
+
+
 
 
 
