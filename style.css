@@ -263,5 +263,41 @@ footer {
     cursor: pointer;
 }
 
+/* 🔹 Ajustes generales para móviles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .productos .grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .producto {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .modal-contenido {
+        width: 80%;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .busqueda-container {
+        width: 90%;
+    }
+}
+
 
 
