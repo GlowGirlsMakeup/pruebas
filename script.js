@@ -19,7 +19,39 @@ document.getElementById("botonAccion").addEventListener("click", function() {
 });
 
 
+// 🛒 ventana emergente y carrito de compras
+function mostrarModal(nombre, imagen, descripcion, precio) {
+    document.getElementById("tituloProducto").textContent = nombre;
+    document.getElementById("imagenProducto").src = imagen;
+    document.getElementById("descripcionProducto").textContent = descripcion;
+    document.getElementById("valorProducto").textContent = precio;
+    document.getElementById("modalProducto").style.display = "block";
+}
 
+function cerrarModal() {
+    document.getElementById("modalProducto").style.display = "none";
+}
+
+function agregarAlCarritoDesdeModal() {
+    let nombre = document.getElementById("tituloProducto").textContent;
+    let precio = parseInt(document.getElementById("valorProducto").textContent);
+    agregarAlCarrito(nombre, precio);
+    cerrarModal();
+}
+
+// 🛒 ventana emergente
+function toggleExpand(element) {
+    // Cierra cualquier producto que esté expandido antes de abrir uno nuevo
+    let productos = document.querySelectorAll(".producto");
+    productos.forEach(producto => {
+        if (producto !== element && producto.classList.contains("expandido")) {
+            producto.classList.remove("expandido");
+        }
+    });
+
+    // Alterna el estado del producto actual
+    element.classList.toggle("expandido");
+}
 
 
 
