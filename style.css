@@ -63,42 +63,165 @@ body {
     padding: 50px;
 }
 
-/* 🌐 REDES */
-.titulo-contacto {
+
+
+
+/* 🌟 Fondo elegante */
+.producto {
+    width: 260px;
+    height: 370px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* 🔄 Expansión de la tarjeta */
+.producto.expandido {
+    height: 450px; /* Aumenta el tamaño cuando se activa */
+}
+
+/* 📄 Ocultar detalles hasta la expansión */
+.detalle {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* 📄 Mostrar detalles cuando el producto está expandido */
+.producto.expandido .detalle {
+    display: block;
+    opacity: 1;
+}
+
+
+/* 💄 Categorías bien presentadas */
+.categoria {
+    margin-bottom: 40px;
+}
+
+.categoria h3 {
     font-size: 24px;
     font-weight: bold;
-    font-family: "Poppins", sans-serif;
-    color: #333;
-}
-
-.contacto-container p {
-    font-size: 18px;
-    font-family: "Poppins", sans-serif;
-}
-
-.instagram-link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    color: #000;
-}
-
-.instagram-link img {
-    width: 25px;
-    height: 25px;
-}
-
-.logo {
-    width: 100px;
-    height: auto;
+    color: #844c4c;
     margin-bottom: 20px;
 }
 
+/* 🛍️ Tarjetas de productos */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
 
+.producto {
+    width: 260px;
+    height: 370px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
 
+.producto:hover {
+    transform: scale(1.05);
+}
+
+/* 📷 Imagen del producto */
+.producto-imagen img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ✨ Información del producto */
+.producto-info {
+    padding: 10px;
+}
+
+.producto-info h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.precio {
+    font-size: 18px;
+    color: #b86d6d;
+    font-weight: bold;
+}
+
+/* 🎨 Botón de compra */
+.btn-comprar {
+    background: #d18b86;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-comprar:hover {
+    background: #b86d6d;
+    transform: scale(1.05);
+}
+
+.categoria {
+    margin-bottom: 40px;
+}
+
+.categoria h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #844c4c;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.producto {
+    width: 260px;
+    height: 370px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Expansión de la tarjeta */
+.producto.expandido {
+    height: 450px;
+}
+
+/* Ocultar detalles hasta la expansión */
+.detalle {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.producto.expandido .detalle {
+    display: block;
+    opacity: 1;
+}
 
 
 
