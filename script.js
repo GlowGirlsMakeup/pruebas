@@ -86,7 +86,7 @@ function calcularTotal() {
     let envioSeleccionado = document.getElementById("metodoEnvio")?.value;
     
     // Ajustar el costo de envío según la opción seleccionada
-    let costoEnvio = envioSeleccionado === "express" ? 1500 : 500;
+    let costoEnvio = envioSeleccionado === "express" ? 0 : 0;
 
     // Mostrar el total correctamente
     document.getElementById("totalCarrito").textContent = totalCarrito + costoEnvio;
