@@ -146,13 +146,13 @@
     </div>
 </section>
 
-<!-- 🛒 Carrito de compras -->
-<section id="carrito" class="modal">
-    <div class="modal-contenido">
-        <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
+        <!-- 🛒 Carrito de compras -->
+<section id="carritoVisible">
         <h2>🛍️ Carrito de Compras</h2>
         <div id="listaCarrito"></div>
         <p>Total: $<span id="totalCarrito">0</span></p>
+        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+        <button onclick="comprar()">Finalizar Compra</button>
 
         <!-- 📦 Métodos de envío -->
         <h3>Selecciona método de envío:</h3>

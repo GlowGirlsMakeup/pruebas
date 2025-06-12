@@ -39,19 +39,24 @@ function actualizarCarrito() {
     if (!lista) return;
 
     lista.innerHTML = "";
-    carrito.forEach(producto => {
-        let item = document.createElement("p");
-        item.textContent = `${producto.nombre} - $${producto.precio}`;
+    carrito.forEach((producto, index) => {
+        let item = document.createElement("div");
+        item.classList.add("carrito-item");
+        item.innerHTML = `<p>${producto.nombre} - $${producto.precio} <button onclick="eliminarDelCarrito(${index})">❌</button></p>`;
         lista.appendChild(item);
     });
 
     calcularTotal();
 }
 
+function eliminarDelCarrito(index) {
+    carrito.splice(index, 1);
+    actualizarCarrito();
+}
+
 function calcularTotal() {
     let totalCarrito = carrito.reduce((sum, producto) => sum + producto.precio, 0);
-    let envio = document.getElementById("metodoEnvio")?.value === "express" ? 1500 : 500;
-    document.getElementById("totalCarrito").textContent = totalCarrito + envio;
+    document.getElementById("totalCarrito").textContent = totalCarrito;
 }
 
 function vaciarCarrito() {
@@ -60,13 +65,16 @@ function vaciarCarrito() {
 }
 
 function comprar() {
-    let metodoPago = document.getElementById("metodoPago")?.value;
-    let envio = document.getElementById("metodoEnvio")?.value === "express" ? 1500 : 500;
-    let totalFinal = carrito.reduce((sum, producto) => sum + producto.precio, 0) + envio;
+    if (carrito.length === 0) {
+        alert("🛍️ Tu carrito está vacío.");
+        return;
+    }
 
-    alert(`✅ Compra realizada con ${metodoPago}. Total a pagar: $${totalFinal}`);
+    let totalFinal = carrito.reduce((sum, producto) => sum + producto.precio, 0);
+    alert(`✅ Compra realizada. Total a pagar: $${totalFinal}`);
     vaciarCarrito();
 }
+
 
 
 // 🛍️ Expansión de productos al hacer clic

@@ -305,6 +305,38 @@ button:hover {
     transform: scale(1.05);
 }
 
+/* 🛒 CARRITO VISIBLE*/
+
+#carritoVisible {
+    background: #fff3e0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    margin: 20px auto;
+}
+
+.carrito-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+button {
+    background: #d18b86;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #b86d6d;
+}
+
+
 
 
 
