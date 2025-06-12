@@ -130,6 +130,49 @@ function toggleExpand(element) {
     element.classList.toggle("expandido");
 }
 
+// 📍Maps
+function actualizarMapa() {
+    let direccion = document.getElementById("direccionEnvio").value;
+    let mapaLink = document.getElementById("mapaLink");
+
+    if (direccion.trim() !== "") {
+        let urlMapa = `https://www.google.com/maps/search/${encodeURIComponent(direccion)}`;
+        mapaLink.href = urlMapa;
+    } else {
+        mapaLink.href = "#"; // Desactiva el enlace si no hay dirección
+    }
+}
+
+// 📍Maps
+function comprar() {
+    if (carrito.length === 0) {
+        alert("🛍️ Tu carrito está vacío.");
+        return;
+    }
+
+    let metodoPago = document.getElementById("metodoPago").value;
+    let envioSeleccionado = document.getElementById("metodoEnvio").value;
+    let direccion = document.getElementById("direccionEnvio").value;
+
+    if (direccion.trim() === "") {
+        alert("📍 Por favor, ingresa tu dirección de envío.");
+        return;
+    }
+
+    let totalFinal = carrito.reduce((sum, producto) => sum + producto.precio, 0) + (envioSeleccionado === "express" ? 1500 : 500);
+
+    let mensaje = `Hola, quiero realizar una compra con un total de $${totalFinal}. Métodos de pago: ${metodoPago}. Envío seleccionado: ${envioSeleccionado}. Dirección: ${direccion}`;
+    let whatsappURL = `https://wa.me/5491130126909?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(whatsappURL, "_blank");
+
+    if (metodoPago === "mercadopago") {
+        window.open("https://www.mercadopago.com.ar/", "_blank");
+    }
+
+    alert(`✅ Compra realizada. Total a pagar: $${totalFinal}`);
+    vaciarCarrito();
+}
 
 
 

@@ -125,11 +125,10 @@
     <p>Total: $<span id="totalCarrito">0</span></p>
 
     <!-- 📦 Métodos de envío -->
-    <h3>Selecciona método de envío:</h3>
-    <select id="metodoEnvio">
-        <option value="standard">Envío estándar ($500)</option>
-        <option value="express">Envío rápido ($1.500)</option>
-    </select>
+    <h3>Ingrese su dirección de envío:</h3>
+    <input type="text" id="direccionEnvio" placeholder="Calle y número" oninput="actualizarMapa()">
+        <a id="mapaLink" href="#" target="_blank">📍 Ver ubicación en Google Maps</a>
+
 
     <!-- 💳 Métodos de pago -->
     <h3>Selecciona método de pago:</h3>
