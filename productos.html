@@ -10,8 +10,8 @@
 <body>
 
     <!-- 💄 productos -->
-    <section id="productos">
-        <h2>Nuestros Productos</h2>
+<section id="productos">
+    <h2>Nuestros Productos</h2>
 
     <div class="categoria">
         <h3>💄 Labiales</h3>
@@ -45,6 +45,59 @@
             </div>
         </div>
     </div>
+
+    <div class="categoria">
+        <h3>✨ Bases</h3>
+        <div class="grid">
+            <div class="producto" onclick="toggleExpand(this)">
+                <div class="producto-imagen">
+                    <img src="images/Base.png" alt="Base Líquida">
+                </div>
+                <div class="producto-info">
+                    <h3>Base Líquida</h3>
+                    <p class="precio">$7.500</p>
+                    <div class="detalle">
+                        <p>Base hidratante con acabado natural y cobertura media.</p>
+                        <button class="btn-comprar" onclick="agregarAlCarrito('Base Líquida', 7500)">🛍️ Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="categoria">
+        <h3>🛠 Accesorios</h3>
+        <div class="grid">
+            <div class="producto" onclick="toggleExpand(this)">
+                <div class="producto-imagen">
+                    <img src="images/Arqueador.png" alt="Arqueador">
+                </div>
+                <div class="producto-info">
+                    <h3>Arqueador</h3>
+                    <p class="precio">$6.000</p>
+                    <div class="detalle">
+                        <p>Arqueador de pestañas para un rizado perfecto.</p>
+                        <button class="btn-comprar" onclick="agregarAlCarrito('Arqueador', 6000)">🛍️ Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto" onclick="toggleExpand(this)">
+                <div class="producto-imagen">
+                    <img src="images/Perfilador.png" alt="Perfilador">
+                </div>
+                <div class="producto-info">
+                    <h3>Perfilador</h3>
+                    <p class="precio">$8.000</p>
+                    <div class="detalle">
+                        <p>Perfilador preciso para definir tus cejas y labios.</p>
+                        <button class="btn-comprar" onclick="agregarAlCarrito('Perfilador', 8000)">🛍️ Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <div class="categoria">
         <h3>✨ Bases</h3>
