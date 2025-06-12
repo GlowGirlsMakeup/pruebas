@@ -13,25 +13,60 @@
     <section id="productos">
         <h2>Nuestros Productos</h2>
 
-        <div class="categoria">
-            <h3>💄 Labiales</h3>
-            <div class="grid">
-                <div class="producto" onclick="toggleExpand(this)">
-                    <div class="producto-imagen">
-                        <img src="images/Labial.png" alt="Labial Rojo">
+    <div class="categoria">
+        <h3>💄 Labiales</h3>
+        <div class="grid">
+            <div class="producto" onclick="toggleExpand(this)">
+                <div class="producto-imagen">
+                    <img src="images/Labial.png" alt="Labial Rojo">
+                </div>
+                <div class="producto-info">
+                    <h3>Labial Rojo</h3>
+                    <p class="precio">$4.500</p>
+                    <div class="detalle">
+                        <p>Labial de larga duración con color intenso.</p>
+                        <button class="btn-comprar" onclick="agregarAlCarrito('Labial Rojo', 4500)">🛍️ Añadir al Carrito</button>
                     </div>
-                    <div class="producto-info">
-                        <h3>Labial Rojo</h3>
-                        <p class="precio">$4.500</p>
-                        <div class="detalle">
-                            <p>Labial de larga duración con color intenso.</p>
-                            <button class="btn-comprar" onclick="agregarAlCarrito('Labial Rojo', 4500)">🛍️ Añadir al Carrito</button>
-                        </div>
+                </div>
+            </div>
+
+            <div class="producto" onclick="toggleExpand(this)">
+                <div class="producto-imagen">
+                    <img src="images/Corrector.png" alt="Corrector">
+                </div>
+                <div class="producto-info">
+                    <h3>Corrector</h3>
+                    <p class="precio">$6.500</p>
+                    <div class="detalle">
+                        <p>Corrector con alta cobertura y textura ligera.</p>
+                        <button class="btn-comprar" onclick="agregarAlCarrito('Corrector', 6500)">🛍️ Añadir al Carrito</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <div class="categoria">
+        <h3>✨ Bases</h3>
+        <div class="grid">
+            <div class="producto" onclick="toggleExpand(this)">
+                <div class="producto-imagen">
+                    <img src="images/Base.png" alt="Base Líquida">
+                </div>
+                <div class="producto-info">
+                    <h3>Base Líquida</h3>
+                    <p class="precio">$7.500</p>
+                    <div class="detalle">
+                        <p>Base hidratante con acabado natural y cobertura media.</p>
+                        <button class="btn-comprar" onclick="agregarAlCarrito('Base Líquida', 7500)">🛍️ Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="categoria">
+
 
 
     <!-- 🛍️ Ventana emergente de producto -->

@@ -207,3 +207,55 @@ body {
     transform: scale(1.05);
 }
 
+.categoria {
+    margin-bottom: 40px;
+}
+
+.categoria h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #844c4c;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.producto {
+    width: 260px;
+    height: 370px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Expansión de la tarjeta */
+.producto.expandido {
+    height: 450px;
+}
+
+/* Ocultar detalles hasta la expansión */
+.detalle {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Mostrar detalles cuando el producto está expandido */
+.producto.expandido .detalle {
+    display: block;
+    opacity: 1;
+}
+
+
+
+
