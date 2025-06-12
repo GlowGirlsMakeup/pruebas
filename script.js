@@ -127,3 +127,23 @@ document.querySelectorAll(".producto button").forEach((boton) => {
         });
     }
 });
+
+// 🛍️ Ventana emergente de producto
+function mostrarModal(nombre, imagen, descripcion, precio) {
+    document.getElementById("tituloProducto").textContent = nombre;
+    document.getElementById("imagenProducto").src = imagen;
+    document.getElementById("descripcionProducto").textContent = descripcion;
+    document.getElementById("valorProducto").textContent = precio;
+    document.getElementById("modalProducto").style.display = "block";
+}
+
+function cerrarModal() {
+    document.getElementById("modalProducto").style.display = "none";
+}
+
+function agregarAlCarritoDesdeModal() {
+    let nombre = document.getElementById("tituloProducto").textContent;
+    let precio = parseInt(document.getElementById("valorProducto").textContent);
+    agregarAlCarrito(nombre, precio);
+    cerrarModal();
+}
