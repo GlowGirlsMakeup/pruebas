@@ -49,24 +49,25 @@
             <h2>🛍️ Carrito de Compras</h2>
             <div id="listaCarrito"></div>
             <p>Total: $<span id="totalCarrito">0</span></p>
-            <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
         </div>
     </section>
-    
-<!-- 🛍️ Ventana emergente de producto -->
-<div id="modalProducto" class="modal">
-    <div class="modal-contenido">
-        <span class="cerrar" onclick="cerrarModal()">&times;</span>
-        <h2 id="tituloProducto"></h2>
-        <img id="imagenProducto" src="" alt="Imagen del producto">
-        <p id="descripcionProducto"></p>
-        <p>Precio: $<span id="valorProducto"></span></p>
-        <button onclick="agregarAlCarritoDesdeModal()">Añadir al Carrito</button>
-    </div>
-</div>
 
-<!-- Sección de productos con evento onclick -->
-<section id="productos" class="productos">
+    
+    <!-- 🛍️ Ventana emergente de producto -->
+    <div id="modalProducto" class="modal">
+            <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <h2 id="tituloProducto"></h2>
+            <img id="imagenProducto" src="" alt="Imagen del producto">
+            <p id="descripcionProducto"></p>
+            <p>Precio: $<span id="valorProducto"></span></p>
+            <button onclick="agregarAlCarritoDesdeModal()">Añadir al Carrito</button>
+        </div>
+    </div>
+
+    <!-- Sección de productos con evento onclick -->
+    <section id="productos" class="productos">
     <h2>Nuestros Productos</h2>
 
     <div class="categoria">
@@ -79,7 +80,7 @@
             </div>
         </div>
     </div>
-</section>
+    </section>
 
     <!-- Sección de productos -->
 <section id="productos" class="productos">
