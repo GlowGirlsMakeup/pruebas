@@ -308,33 +308,83 @@ button:hover {
 /* 🛒 CARRITO VISIBLE*/
 
 #carritoVisible {
-    background: #fff3e0;
+    background: #ffffff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 320px;
-    margin: 20px auto;
+    width: 340px;
+    margin: 30px auto;
+    font-family: "Poppins", sans-serif;
+}
+
+#carritoVisible h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #844c4c;
+    margin-bottom: 15px;
 }
 
 .carrito-item {
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
+    align-items: center;
+    background: #f8e8e8;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin: 5px 0;
 }
 
+.carrito-item p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #6a3d3d;
+}
+
+.carrito-item button {
+    background: none;
+    border: none;
+    color: #d18b86;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#totalCarrito {
+    font-size: 20px;
+    font-weight: bold;
+    color: #b86d6d;
+}
+
+/* 📦 Diseño mejorado para selectores */
+select {
+    width: 90%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d6a5a5;
+    background: #fff8f8;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* 🎨 Botones estilizados */
 button {
-    background: #d18b86;
+    background: linear-gradient(90deg, #d18b86, #b86d6d);
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 10px;
     cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+    width: 90%;
+    margin-top: 10px;
 }
 
 button:hover {
     background: #b86d6d;
+    transform: scale(1.05);
 }
+
 
 
 
