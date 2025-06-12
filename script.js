@@ -162,13 +162,21 @@ function comprar() {
 
     let totalFinal = carrito.reduce((sum, producto) => sum + producto.precio, 0) + (envioSeleccionado === "express" ? 1500 : 500);
 
-    let mensaje = `Hola, quiero realizar una compra con un total de $${totalFinal}. Métodos de pago: ${metodoPago}.
-    Dirección: ${direccion}.`;
+    // Generar el enlace de Google Maps basado en la dirección ingresada
+    let urlMapa = `https://www.google.com/maps/search/${encodeURIComponent(direccion)}`;
+
+    // Crear el mensaje de WhatsApp con la ubicación incluida
+    let mensaje = `Hola, quiero realizar una compra con un total de $${totalFinal}. Métodos de pago: ${metodoPago}. 
+    Envío seleccionado: ${envioSeleccionado}. 
+    Dirección: ${direccion}.  
+    📍 Ubicación en Google Maps: ${urlMapa}`;
 
     let whatsappURL = `https://api.whatsapp.com/send?phone=5491130126909&text=${encodeURIComponent(mensaje)}`;
 
+    // Abrir WhatsApp con el mensaje y el link de la ubicación
     window.open(whatsappURL, "_blank");
 
+    // Abrir MercadoPago si el usuario eligió ese método de pago
     if (metodoPago === "mercadopago") {
         window.open("https://www.mercadopago.com.ar/", "_blank");
     }
