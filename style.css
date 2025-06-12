@@ -385,6 +385,31 @@ button:hover {
     transform: scale(1.05);
 }
 
+/* 🔹 Contenedor de los enlaces de navegación */
+.nav-links {
+    display: flex; /* Coloca los enlaces en línea */
+    justify-content: flex-end; /* Los mueve hacia la derecha */
+    list-style: none; /* Elimina los puntos negros */
+    padding: 20px;
+    gap: 20px; /* Espaciado entre los enlaces */
+}
+
+/* 🔹 Diseño de los enlaces */
+.nav-links a {
+    color: #844c4c; /* Color moderno */
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    background: #f8e8e8; /* Efecto visual al pasar el cursor */
+    transform: scale(1.05);
+}
+
 
 
 
