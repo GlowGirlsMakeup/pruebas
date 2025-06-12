@@ -119,34 +119,6 @@
     </header>
 
 <!-- 🛒 Carrito de compras -->
-<section id="carrito" class="modal">
-    <div class="modal-contenido">
-        <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
-        <h2>🛍️ Carrito de Compras</h2>
-        <div id="listaCarrito"></div>
-        <p>Total: $<span id="totalCarrito">0</span></p>
-
-        <!-- 📦 Métodos de envío -->
-        <h3>Selecciona método de envío:</h3>
-        <select id="metodoEnvio">
-            <option value="standard">Envío estándar ($500)</option>
-            <option value="express">Envío rápido ($1.500)</option>
-        </select>
-
-        <!-- 💳 Métodos de pago -->
-        <h3>Selecciona método de pago:</h3>
-        <select id="metodoPago">
-            <option value="mercadopago">MercadoPago</option>
-            <option value="tarjeta">Tarjeta de crédito</option>
-            <option value="paypal">PayPal</option>
-        </select>
-
-        <button onclick="comprar()">Finalizar Compra</button>
-        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
-    </div>
-</section>
-
-<!-- 🛒 Carrito de compras -->
 <section id="carritoVisible">
     <h2>🛍️ Carrito de Compras</h2>
     <div id="listaCarrito"></div>
