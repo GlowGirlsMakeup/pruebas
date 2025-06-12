@@ -54,213 +54,47 @@ body {
     transform: scale(1.1);
 }
 
-/* 🔎 Barra de Búsqueda */
-.busqueda-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-#busqueda {
-    width: 60%;
-    max-width: 370px;
-    padding: 12px;
-    border: 2px solid #b58e72;
-    border-radius: 16px;
-    font-size: 16px;
-    background-color: #f7eddc;
-    transition: box-shadow 0.3s ease;
-}
-
-#busqueda:focus {
-    box-shadow: 0 0 10px rgba(181, 142, 114, 0.5);
-}
-
-/* 🛍️ Diseño del Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background-color: #b58e72;
-    color: white;
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-
-header nav ul li {
-    display: inline;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-/* 🛒 Botón del Carrito */
-.carrito-container {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-}
-
-#verCarrito {
-    background-color: white;
-    color: #b58e72;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-#verCarrito:hover {
-    background-color: #8f6b54;
-    transform: scale(1.05);
-}
-
-/* 🛒 Diseño del Modal del Carrito */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 320px;
-    height: 100%;
-    background: #f7eddc;
-    box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    overflow-y: auto;
-}
-
-.modal-contenido {
+.contacto-container {
     text-align: center;
-}
-
-.cerrar {
-    position: absolute;
-    right: 15px;
-    top: 10px;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* 🏪 Contenedor de Productos */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    justify-content: center;
-}
-
-/* 🎨 Tarjeta de Producto */
-.producto {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    animation: fadeInUp 0.6s ease-in-out;
+    gap: 15px;
+    padding: 50px;
 }
 
-.producto img {
-    width: 100%;
-    max-width: 200px;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
+.titulo-contacto {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    color: #333;
 }
 
-.producto img:hover {
-    transform: scale(1.05);
+.contacto-container p {
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
 }
 
-/* 💰 Botón de Compra */
-button {
-    background-color: #b58e72;
-    color: white;
-    padding: 12px 18px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+.instagram-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
 }
 
-button:hover {
-    background-color: #8f6b54;
-    transform: scale(1.05);
+.instagram-link img {
+    width: 25px;
+    height: 25px;
 }
 
-/* 💬 Sección de Comentarios */
-#comentarios {
-    text-align: left;
-    width: 50%;
-    margin: auto;
-    padding: 20px;
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
-textarea {
-    width: 100%;
-    height: 80px;
-    border: 2px solid #b58e72;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 8px;
-    transition: box-shadow 0.3s ease;
-}
-
-textarea:focus {
-    box-shadow: 0 0 10px rgba(181, 142, 114, 0.5);
-}
-
-/* 👣 Footer */
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #b58e72;
-    color: white;
-    font-size: 14px;
-}
-
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* 🛍️ Ventana emergente de producto */
-.modal-contenido {
-    background: white;
-    padding: 20px;
-    margin: auto;
-    width: 50%;
-    position: relative;
-    top: 20%;
-    text-align: center;
-}
-
-.cerrar {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 25px;
-    cursor: pointer;
-}
 
 
