@@ -63,6 +63,7 @@ body {
     padding: 50px;
 }
 
+/* 🌐 REDES */
 .titulo-contacto {
     font-size: 24px;
     font-weight: bold;
@@ -96,5 +97,56 @@ body {
     margin-bottom: 20px;
 }
 
+
+/* 🛍️ Productos */
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.producto {
+    width: 250px;
+    text-align: center;
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+}
+
+.producto img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.producto h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.producto p {
+    font-size: 18px;
+    color: #444;
+}
+
+.producto button {
+    background: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.producto button:hover {
+    background: #d1478a;
+}
 
 
