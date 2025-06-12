@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // 🛒 Carrito de compras
 let carrito = [];
+let totalCarrito = 0;
+let costoEnvio = 500; // Valor inicial de envío estándar
 
 function agregarAlCarrito(nombre, precio) {
     carrito.push({ nombre, precio });
@@ -55,8 +57,13 @@ function eliminarDelCarrito(index) {
 }
 
 function calcularTotal() {
-    let totalCarrito = carrito.reduce((sum, producto) => sum + producto.precio, 0);
-    document.getElementById("totalCarrito").textContent = totalCarrito;
+    totalCarrito = carrito.reduce((sum, producto) => sum + producto.precio, 0);
+    let envioSeleccionado = document.getElementById("metodoEnvio").value;
+
+    // Ajustar el costo de envío según la opción seleccionada
+    costoEnvio = envioSeleccionado === "express" ? 1500 : 500;
+
+    document.getElementById("totalCarrito").textContent = totalCarrito + costoEnvio;
 }
 
 function vaciarCarrito() {
@@ -70,11 +77,26 @@ function comprar() {
         return;
     }
 
-    let totalFinal = carrito.reduce((sum, producto) => sum + producto.precio, 0);
+    let metodoPago = document.getElementById("metodoPago").value;
+    let totalFinal = totalCarrito + costoEnvio;
+
+    // 📦 Redirigir a WhatsApp con los detalles del pedido
+    let mensaje = `Hola, quiero realizar una compra con un total de $${totalFinal}. Métodos de pago: ${metodoPago}. Envío seleccionado: ${document.getElementById("metodoEnvio").value}.`;
+    let whatsappURL = `https://wa.me/5491130126909?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(whatsappURL, "_blank");
+
+    // 💳 Redirigir a MercadoPago (simulado)
+    if (metodoPago === "mercadopago") {
+        window.open("https://www.mercadopago.com.ar/", "_blank");
+    }
+
     alert(`✅ Compra realizada. Total a pagar: $${totalFinal}`);
     vaciarCarrito();
 }
 
+// Detectar cambios en método de envío y actualizar total
+document.getElementById("metodoEnvio").addEventListener("change", calcularTotal);
 
 
 // 🛍️ Expansión de productos al hacer clic

@@ -313,7 +313,7 @@ button:hover {
     border-radius: 10px;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 300px;
+    width: 320px;
     margin: 20px auto;
 }
 
@@ -327,7 +327,7 @@ button {
     background: #d18b86;
     color: white;
     border: none;
-    padding: 8px;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -335,6 +335,7 @@ button {
 button:hover {
     background: #b86d6d;
 }
+
 
 
 
