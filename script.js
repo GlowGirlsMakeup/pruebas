@@ -82,19 +82,22 @@ function eliminarDelCarrito(index) {
 }
 
 function calcularTotal() {
-    totalCarrito = carrito.reduce((sum, producto) => sum + producto.precio, 0);
-    let envioSeleccionado = document.getElementById("metodoEnvio").value;
-
+    let totalCarrito = carrito.reduce((sum, producto) => sum + producto.precio, 0);
+    let envioSeleccionado = document.getElementById("metodoEnvio")?.value;
+    
     // Ajustar el costo de envío según la opción seleccionada
-    costoEnvio = envioSeleccionado === "express" ? 1500 : 500;
+    let costoEnvio = envioSeleccionado === "express" ? 1500 : 500;
 
+    // Mostrar el total correctamente
     document.getElementById("totalCarrito").textContent = totalCarrito + costoEnvio;
 }
 
-function vaciarCarrito() {
-    carrito = [];
+function agregarAlCarrito(nombre, precio) {
+    carrito.push({ nombre, precio });
     actualizarCarrito();
+    calcularTotal(); // ✅ Se ejecuta cada vez que se agrega un producto
 }
+
 
 function comprar() {
     if (carrito.length === 0) {
