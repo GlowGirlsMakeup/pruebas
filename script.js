@@ -125,17 +125,22 @@ function toggleExpand(element) {
 }
 
 // 📍Maps
+document.getElementById("direccionEnvio").addEventListener("input", actualizarMapa);
+
 function actualizarMapa() {
-    let direccion = document.getElementById("direccionEnvio").value;
+    let direccion = document.getElementById("direccionEnvio").value.trim();
     let mapaLink = document.getElementById("mapaLink");
 
-    if (direccion.trim() !== "") {
+    if (direccion !== "") {
         let urlMapa = `https://www.google.com/maps/search/${encodeURIComponent(direccion)}`;
         mapaLink.href = urlMapa;
+        mapaLink.style.display = "block"; // Hace visible el enlace cuando hay dirección
     } else {
-        mapaLink.href = "#"; // Desactiva el enlace si no hay dirección
+        mapaLink.href = "#";
+        mapaLink.style.display = "none"; // Oculta el enlace si no hay dirección
     }
 }
+
 
 // 📍Maps
 function comprar() {
@@ -144,11 +149,11 @@ function comprar() {
         return;
     }
 
-    let metodoPago = document.getElementById("metodoPago").value;
-    let envioSeleccionado = document.getElementById("metodoEnvio").value;
-    let direccion = document.getElementById("direccionEnvio").value;
+    let metodoPago = document.getElementById("metodoPago")?.value;
+    let envioSeleccionado = document.getElementById("metodoEnvio")?.value;
+    let direccion = document.getElementById("direccionEnvio")?.value.trim();
 
-    if (direccion.trim() === "") {
+    if (!direccion) {
         alert("📍 Por favor, ingresa tu dirección de envío.");
         return;
     }
@@ -159,7 +164,7 @@ function comprar() {
     Envío seleccionado: ${envioSeleccionado}. 
     Dirección: ${direccion}.`;
 
-    let whatsappURL = `https://wa.me/5491130126909?text=${encodeURIComponent(mensaje)}`;
+    let whatsappURL = `https://api.whatsapp.com/send?phone=5491130126909&text=${encodeURIComponent(mensaje)}`;
 
     window.open(whatsappURL, "_blank");
 
