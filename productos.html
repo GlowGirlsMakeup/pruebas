@@ -9,39 +9,26 @@
 </head>
 <body>
 
-<section id="productos">
-    <h2 class="titulo-productos">Nuestros Productos</h2>
-
-    <div class="categoria">
-        <h3>💄 Labiales</h3>
-        <div class="grid">
-            <div class="producto" onclick="mostrarModal('Labial Rojo', 'images/Labial.png', 'Labial de larga duración, color intenso.', 4500)">
-                <div class="producto-imagen">
-                    <img src="images/Labial.png" alt="Labial Rojo">
-                </div>
-                <div class="producto-info">
-                    <h3>Labial Rojo</h3>
-                    <p class="precio">$4.500</p>
-                    <button class="btn-comprar" onclick="agregarAlCarrito('Labial Rojo', 4500)">🛍️ Añadir al Carrito</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    <!-- 💄 productos -->
+    <section id="productos">
+        <h2 class="titulo-productos">Nuestros Productos</h2>
 
         <div class="categoria">
-            <h3>✨ Bases</h3>
+            <h3>💄 Labiales</h3>
             <div class="grid">
-                <div class="producto" onclick="mostrarModal('Base Líquida', 'images/Base.png', 'Base hidratante para una piel perfecta.', 7500)">
-                    <img src="images/Base.png" alt="Base Líquida">
-                    <h3>Base Líquida</h3>
-                    <p>$7.500</p>
-                    <button onclick="agregarAlCarrito('Base Líquida', 7500)">🛍️ Añadir al Carrito</button>
+                <div class="producto" onclick="mostrarModal('Labial Rojo', 'images/Labial.png', 'Labial de larga duración, color intenso.', 4500)">
+                    <div class="producto-imagen">
+                        <img src="images/Labial.png" alt="Labial Rojo">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Labial Rojo</h3>
+                        <p class="precio">$4.500</p>
+                        <button class="btn-comprar" onclick="agregarAlCarrito('Labial Rojo', 4500)">🛍️ Añadir al Carrito</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- 🛍️ Ventana emergente de producto -->
     <div id="modalProducto" class="modal">
