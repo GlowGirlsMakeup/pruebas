@@ -245,15 +245,19 @@ body {
 
 /* Ocultar detalles hasta la expansión */
 .detalle {
-    display: none;
+    display: none; /* ✅ Oculta los detalles inicialmente */
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    height: 0;
+    transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out;
+    overflow: hidden;
 }
 
 .producto.expandido .detalle {
-    display: block;
+    display: block; /* ✅ Solo aparece cuando la tarjeta está expandida */
     opacity: 1;
+    height: auto;
 }
+
 
 
 

@@ -41,13 +41,18 @@ function agregarAlCarritoDesdeModal() {
 
 // 🛒 ventana emergente
 function toggleExpand(element) {
-    // Verifica si ya está expandido
-    if (element.classList.contains("expandido")) {
-        element.classList.remove("expandido");
-    } else {
-        element.classList.add("expandido");
-    }
+    // Cierra cualquier producto que esté expandido antes de abrir uno nuevo
+    let productos = document.querySelectorAll(".producto");
+    productos.forEach(producto => {
+        if (producto !== element && producto.classList.contains("expandido")) {
+            producto.classList.remove("expandido");
+        }
+    });
+
+    // Alterna el estado del producto actual
+    element.classList.toggle("expandido");
 }
+
 
 
 
