@@ -367,6 +367,7 @@ select {
 }
 
 /* 🎨 Botones estilizados */
+
 button {
     background: linear-gradient(90deg, #d18b86, #b86d6d);
     color: white;

@@ -155,7 +155,11 @@ function comprar() {
 
     let totalFinal = carrito.reduce((sum, producto) => sum + producto.precio, 0) + (envioSeleccionado === "express" ? 1500 : 500);
 
-    let mensaje = `Hola, quiero realizar una compra con un total de $${totalFinal}. Métodos de pago: ${metodoPago}. Envío seleccionado: ${envioSeleccionado}. Dirección: ${direccion}`;
+    let mensaje = `Hola, quiero realizar una compra con un total de $${totalFinal}. 
+    Métodos de pago: ${metodoPago}. 
+    Envío seleccionado: ${envioSeleccionado}. 
+    Dirección: ${direccion}`;
+
     let whatsappURL = `https://wa.me/5491130126909?text=${encodeURIComponent(mensaje)}`;
 
     window.open(whatsappURL, "_blank");
@@ -167,6 +171,7 @@ function comprar() {
     alert(`✅ Compra realizada. Total a pagar: $${totalFinal}`);
     vaciarCarrito();
 }
+
 
 
 
