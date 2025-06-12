@@ -98,12 +98,16 @@ body {
 }
 
 
-/* 🛍️ Productos */
-
+/* 🌟 Fondo elegante */
 #productos {
-    background: #f0e6de; /* Color cálido y elegante */
+    background: linear-gradient(to bottom, #e8d5c4, #f6ece2); /* Tonos cálidos y sofisticados */
     padding: 50px;
     text-align: center;
+}
+
+/* 💄 Categorías bien presentadas */
+.categoria {
+    margin-bottom: 40px;
 }
 
 .categoria h3 {
@@ -113,6 +117,7 @@ body {
     margin-bottom: 20px;
 }
 
+/* 🛍️ Tarjetas de productos */
 .grid {
     display: flex;
     flex-wrap: wrap;
@@ -121,41 +126,59 @@ body {
 }
 
 .producto {
-    width: 250px;
-    height: 350px;
-    background: #ffffff;
+    width: 260px;
+    height: 370px;
+    background: white;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 12px;
     transition: 0.3s ease-in-out;
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
-.producto img {
+.producto:hover {
+    transform: scale(1.05);
+}
+
+/* 📷 Imagen del producto */
+.producto-imagen img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
-.producto h3 {
+/* ✨ Información del producto */
+.producto-info {
+    padding: 10px;
+}
+
+.producto-info h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.precio {
     font-size: 18px;
-    margin: 10px 0;
+    color: #b86d6d;
+    font-weight: bold;
 }
 
-.producto p {
-    font-size: 16px;
-    color: #444;
-}
-
-.producto button {
+/* 🎨 Botón de compra */
+.btn-comprar {
     background: #d18b86;
     color: white;
     border: none;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
 }
 
-.producto button:hover {
+.btn-comprar:hover {
     background: #b86d6d;
+    transform: scale(1.05);
 }
+
