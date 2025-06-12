@@ -160,7 +160,7 @@ function comprar() {
         return;
     }
 
-    let totalFinal = carrito.reduce((sum, producto) => sum + producto.precio, 0) + (envioSeleccionado === "express" ? 1500 : 500);
+    let totalFinal = carrito.reduce((sum, producto) => sum + producto.precio, 0) + (envioSeleccionado === "express" ? 0 : 0);
 
     // Generar el enlace de Google Maps basado en la dirección ingresada
     let urlMapa = `https://www.google.com/maps/search/${encodeURIComponent(direccion)}`;
