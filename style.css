@@ -99,11 +99,36 @@ body {
 
 
 /* 🌟 Fondo elegante */
-#productos {
-    background: linear-gradient(to bottom, #e8d5c4, #f6ece2); /* Tonos cálidos y sofisticados */
-    padding: 50px;
-    text-align: center;
+.producto {
+    width: 260px;
+    height: 370px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
 }
+
+/* 🔄 Expansión de la tarjeta */
+.producto.expandido {
+    height: 450px; /* Aumenta el tamaño cuando se activa */
+}
+
+/* 📄 Ocultar detalles hasta la expansión */
+.detalle {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* 📄 Mostrar detalles cuando el producto está expandido */
+.producto.expandido .detalle {
+    display: block;
+    opacity: 1;
+}
+
 
 /* 💄 Categorías bien presentadas */
 .categoria {

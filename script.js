@@ -39,3 +39,9 @@ function agregarAlCarritoDesdeModal() {
     cerrarModal();
 }
 
+// 🛒 ventana emergente
+function toggleExpand(element) {
+    element.classList.toggle("expandido");
+}
+
+
