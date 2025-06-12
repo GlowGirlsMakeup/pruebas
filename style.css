@@ -23,13 +23,22 @@ body {
     position: relative;
 }
 
-#portada video {
+.video-fondo {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
 }
+
 
 #portada h1 {
     font-size: 2.8rem;
