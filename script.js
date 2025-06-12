@@ -166,9 +166,9 @@ function comprar() {
     let urlMapa = `https://www.google.com/maps/search/${encodeURIComponent(direccion)}`;
 
     // Crear el mensaje de WhatsApp con la ubicación incluida
-    let mensaje = `Hola, quiero realizar una compra con un total de $${totalFinal}. Métodos de pago: ${metodoPago}. 
-    Envío seleccionado: ${envioSeleccionado}. 
-    Dirección: ${direccion}.  
+    let mensaje = `!!Hola, quiero realizar una compra con un total de $${totalFinal}. 
+    💵Métodos de pago: ${metodoPago}. 
+    ⛔Dirección: ${direccion}.  
     📍 Ubicación en Google Maps: ${urlMapa}`;
 
     let whatsappURL = `https://api.whatsapp.com/send?phone=5491130126909&text=${encodeURIComponent(mensaje)}`;
